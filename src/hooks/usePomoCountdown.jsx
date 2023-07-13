@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useMemo, useState } from 'react';
 import { CyclesContext } from '../context/CyclesContext';
 import { FinishContext } from '../context/FinishContext';
 import { TimerActiveContext } from '../context/TimerActiveContext';
@@ -30,11 +30,15 @@ export default function usePauseCountdown(time) {
       return;
     }
 
-    const interval = setInterval(() =>
-      setTotalTimeInSeconds(c => c - 1), 1000
-    );
+    const countdownMemo = useMemo((totalTimeInSeconds) => {
+      const interval = setInterval(() =>
+        setTotalTimeInSeconds(totalTimeInSeconds - 1), 1000
+      );
 
-    return () => clearInterval(interval);
+      return interval;
+    });
+
+    return () => clearInterval(countdownMemo);
   }, [totalTimeInSeconds, setTimerActive, setFinish, cycle]);
 
   return [minutes, seconds];
