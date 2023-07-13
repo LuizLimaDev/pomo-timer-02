@@ -1,0 +1,24 @@
+@import 'styles/variable';
+@import 'styles/mixin';
+
+.modal__shade {
+    @include modal-shade;
+}
+
+.modal__mensage {
+    @include modal-card;
+}
+
+p {
+    @include tablet {
+        font-size: 1.5rem;
+    }
+}
+
+.cycleDone {
+    color: $color-green;
+
+    @include tablet {
+        font-size: 2rem;
+    }
+}

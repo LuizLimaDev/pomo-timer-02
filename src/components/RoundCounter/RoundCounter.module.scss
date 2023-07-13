@@ -1,0 +1,16 @@
+.roundcouter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    &__circle {
+        width: 4rem;
+    }
+
+    &__number {
+        position: absolute;
+        align-self: center;
+    }
+}

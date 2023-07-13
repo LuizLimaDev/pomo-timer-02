@@ -1,0 +1,30 @@
+@import 'styles/variable';
+@import 'styles/mixin';
+
+.timer__container {
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    justify-content: center;
+
+    margin-top: 2rem;
+
+    @include tablet {
+        justify-content: flex-start;
+        gap: 5rem;
+
+        min-height: $h-md;
+    }
+
+    @include desktop {
+        gap: 2rem;
+
+        margin-top: 0;
+    }
+}
+
+.timer__controls {
+    margin-top: .5rem;
+
+    font-size: .875rem;
+}

@@ -1,0 +1,43 @@
+@import 'styles/variable';
+@import 'styles/mixin';
+
+.modal__shade {
+    @include modal-shade;
+}
+
+.modal__mensage {
+    font-size: .875rem;
+
+    @include modal-card;
+
+    @include tablet {
+        gap: 4rem;
+        padding: 3rem 2rem;
+
+        font-size: 1.5rem;
+    }
+
+    @include desktop {
+        gap: 1.5rem;
+        padding: 2rem 1rem;
+    }
+}
+
+.modal__title {
+    color: $color-red;
+}
+
+.modal__image {
+    width: 80%;
+}
+
+.modal__info {
+    margin: .5rem;
+
+    font-size: .875rem;
+    text-align: start;
+
+    @include tablet {
+        font-size: 1.25rem;
+    }
+}
